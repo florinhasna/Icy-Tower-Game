@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- setting the character set -->
+    <meta charset="utf-8">
+    <!-- scaling and dimensioning -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo.png">
+    <title>Icy Tower</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <h1>
+        <!-- navigation bar with title and logo -->
+        <div class="navigation">
+            <img src="images/logo.png" class="logo">
+            <div class="mainMenu">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="pages/play.html">Play</a>
+                    <a href="pages/login.html" id="loginNav">Login/Register</a>
+                    <a href="pages/about.html">About</a>
+                </nav>
+            </div>
+            <div>
+                <p class="title">Icy Tower</p>
+            </div>
+            <!-- button to instructions regarding game commands -->
+            <div>
+                <button class="howToPlay" onclick="howToPlayButton()">How to play?</button>
+            </div>
+        </div>
+        <!-- The Modal holding the instructions above mentioned -->
+        <div id="insideHowToPlay" class="insideHowToPlay">
+
+            <!-- The content of the modal -->
+            <div class="howToPlayContent">
+                <!-- a button to close the modal with multiplication sign as its content to display -->
+                <button id="closeModal" onclick="closeButton()">&times;</button>
+                <h1>Instructions</h1>
+                <!-- first instruction, positioned on the left -->
+                <div class="leftSideInstruction">
+                    <!-- image to be replaced after game is done -->
+                    <img src="images/left-right.png" class="instructionsImages">
+                    <br>
+                    <!-- spans on the explanation to highlight the keys -->
+                    <p>Use <span class="commands">ArrowLeft</span> or <span class="commands">ArrowRight</span> to move
+                        left or right.</p>
+                </div>
+                <!-- second instruction positioned in the center -->
+                <div class="centerSideInstruction">
+                    <!-- image to be replaced after game is done -->
+                    <img src="images/jump.png" class="instructionsImages">
+                    <br>
+                    <!-- spans on the explanation to highlight the keys -->
+                    <p>Use <span class="commands">Space</span> to jump.</p>
+                </div>
+                <!-- third instruction positioned on the right -->
+                <div class="rightSideInstruction">
+                    <!-- image to be replaced after game is done -->
+                    <img src="images/power.png" class="instructionsImages">
+                    <br>
+                    <!-- spans on the explanation to highlight the keys -->
+                    <p>Collect 3 Powers and press <span class="commands">ArrowUp</span> to perform a <span class="commands">Super
+                            Jump</span>.</p>
+                </div>
+            </div>
+        </div>
+    </h1>
+    <!-- the block of contents, divided in two sides -->
+    <div class="block">
+        <!-- left side a brief description of the game -->
+        <div class="leftSideHome">
+            <p>Icy Tower is a freeware video game by Swedish game developer Free Lunch Design.
+                It is a platform game set in a tower, where the player's goal is to jump from one "floor" to the next
+                and go as high as possible without falling and plunging off the screen.
+                The higher the player's character climbs, the faster the tower's floors move downward and the harder the
+                game becomes. By default, the player controls the character using a keyboard.</p>
+        </div>
+        <!-- right side a image of the original game and a button to redirect to play section -->
+        <div class="rightSideHome">
+            <img src="images/home/gameplay.jpg" class="gameplay">
+            <p class="pictureRef">* Preview of original Icy Tower *</p>
+            <div class="playNowButton">
+                <a href="pages/play.html">PLAY NOW!</a>
+            </div>
+        </div>
+    </div>
+    <script src="javascript/script.js"></script>
+</body>
+
+</html>

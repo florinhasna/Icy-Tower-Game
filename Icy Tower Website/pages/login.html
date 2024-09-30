@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- setting the character set -->
+        <meta charset="utf-8">
+        <!-- scaling and dimensioning -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../images/logo.png">
+        <title>Icy Tower</title>
+        <link href="../css/style.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1>
+            <!-- navigation bar with title and logo -->
+            <div class="navigation">
+                <img src="../images/logo.png" class="logo">
+                <div class="mainMenu">
+                    <nav>
+                        <a href="../index.html">Home</a>
+                        <a href="play.html">Play</a>
+                        <a href="login.html" id="loginNav">Login/Register</a>
+                        <a href="about.html">About</a>
+                    </nav>
+                </div>
+                <div>
+                    <p class="title">Icy Tower</p>
+                </div>
+                <!-- button to instructions regarding game commands -->
+                <div>
+                    <button class="howToPlay" onclick="howToPlayButton()">How to play?</button>
+                </div>
+            </div>
+            <!-- The Modal holding the instructions above mentioned -->
+            <div id="insideHowToPlay" class="insideHowToPlay">
+
+                <!-- The content of the modal -->
+                <div class="howToPlayContent">
+                    <!-- a button to close the modal with multiplication sign as its content to display -->
+                    <button id="closeModal" onclick="closeButton()">&times;</button>
+                    <h1>Instructions</h1>
+                    <!-- first instruction, positioned on the left -->
+                    <div class="leftSideInstruction">
+                        <!-- image to be replaced after game is done -->
+                        <img src="../images/left-right.png" class="instructionsImages">
+                        <br>
+                        <!-- spans on the explanation to highlight the keys -->
+                        <p>Use <span class="commands">ArrowLeft</span> or <span class="commands">ArrowRight</span> to move
+                            left or right.</p>
+                    </div>
+                    <!-- second instruction positioned in the center -->
+                    <div class="centerSideInstruction">
+                        <!-- image to be replaced after game is done -->
+                        <img src="../images/jump.png" class="instructionsImages">
+                        <br>
+                        <!-- spans on the explanation to highlight the keys -->
+                        <p>Use <span class="commands">Space</span> to jump.</p>
+                    </div>
+                    <!-- third instruction positioned on the right -->
+                    <div class="rightSideInstruction">
+                        <!-- image to be replaced after game is done -->
+                        <img src="../images/power.png" class="instructionsImages">
+                        <br>
+                        <!-- spans on the explanation to highlight the keys -->
+                        <p>Collect 3 Powers and press <span class="commands">ArrowUp</span> to perform a <span class="commands">Super
+                                Jump</span>.</p>
+                    </div>
+                </div>
+            </div>
+        </h1>
+        <!-- the main block of the page holding two sides -->
+        <div class="block">
+
+            <!-- creating the login box on the leftSide of the website -->
+            <div class="leftSide">
+                <form>
+                    <!-- fieldset for a good box view -->
+                    <fieldset class="loginRegisterField">
+                        <!-- using the feature legend to display a nice welcome "title" -->
+                        <legend>WELCOME BACK!</legend>
+                        <p id="ifLogged"></p>
+                        <br>
+                        <!-- each label and input are in an individual div elements for styling purposes -->
+                        <div>
+                            <!-- field for username -->
+                            <label for="usernameField" class="loginLabel">Username:</label>
+                            <input type="text" id="usernameField" name="usernameField" class="loginInput" onclick="{document.getElementById('usernameField').style.backgroundColor = '#f1f1f1'}">
+                        </div>
+                        <div>
+                            <!-- field for password -->
+                            <label for="passwordField" class="loginLabel">Password:</label>
+                            <input type="password" id="passwordField" name="passwordField" class="loginInput" onclick="{document.getElementById('passwordField').style.backgroundColor = '#f1f1f1'}">
+                        </div>
+                        <!-- paragraph element that displays message when login is successful or not -->
+                        <p id="validation"></p>
+                        <!-- button to validate login -->
+                        <input type="button" value="Login" onclick="login()" class="loginButton">
+                        <br>
+                        <!-- link to register page -->
+                        <p>Not a member? <a href='register.html'>Register here!</a></p>
+                        <!-- if password forgotten, button opens a modal to reset it -->
+                        <p>Forgot your password?
+                            <!-- set type to button so page won't refresh after pressing -->
+                            <button type="button" class="resetModal" onclick="resetButton()">Reset!</button>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- The Password reset modal -->
+            <div id="insideReset" class="insideReset">
+
+                <!-- Password reset modal content -->
+                <div class="resetContent">
+                    <!-- button to close the modal with multiplication sign as its content to display -->
+                    <button type="button" id="closeResetModal" onclick="closeResetButton()">&times;</button>
+                    <!-- title of the modal -->
+                    <h1>Password Reset</h1>
+                    <!-- explaining the process -->
+                    <p>To reset your password, enter your username and email. If there is any account matching the details,
+                    you will be sent an email with the new password.
+                    </p>
+                    <!-- to enter username and email for checking and reseting -->
+                    <form>
+                        <!-- each label and input are in an individual div elements for styling purposes -->
+                        <div class="resetForm">
+                            <!-- username input -->
+                            <label for="uNameField">Username:</label>
+                            <input type="text" id="uNameField" name="usernameField">
+                        </div>
+                        <div class="resetForm">
+                            <!-- email input -->
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <br>
+                        <!-- to submit, functions to be added -->
+                        <button class="resetButton">RESET</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- the right side contents -->
+            <div class="rightSide">
+                <!-- explaining the advantage of having an account -->
+                <h1>Why having an account?</h1>
+                <p>The main reason is to be able to compete with other players and try to get your score to the top of the leaderboard. 
+                Additionally, you will also be able to like/dislike the game in the 'About' section.
+                </p>
+            </div>
+            <!-- gif, original game animation -->
+            <!-- outside rightSide div to avoid having it in the text box -->
+            <img src="../images/gif/login-gif.gif" class="loginGif">
+        </div>
+        <script src="../javascript/script.js"></script>
+    </body>
+</html>

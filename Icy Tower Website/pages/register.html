@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- setting the character set -->
+    <meta charset="utf-8">
+    <!-- scaling and dimensioning -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo.png">
+    <title>Icy Tower</title>
+    <link href="../css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>
+        <!-- navigation bar with title and logo -->
+        <div class="navigation">
+            <img src="../images/logo.png" class="logo">
+            <div class="mainMenu">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="play.html">Play</a>
+                    <a href="login.html" id="loginNav">Login/Register</a>
+                    <a href="about.html">About</a>
+                </nav>
+            </div>
+            <div>
+                <p class="title">Icy Tower</p>
+            </div>
+            <!-- button to instructions regarding game commands -->
+            <div>
+                <button class="howToPlay" onclick="howToPlayButton()">How to play?</button>
+            </div>
+        </div>
+        <!-- The Modal holding the instructions above mentioned -->
+        <div id="insideHowToPlay" class="insideHowToPlay">
+
+            <!-- The content of the modal -->
+            <div class="howToPlayContent">
+                <!-- a button to close the modal with multiplication sign as its content to display -->
+                <button id="closeModal" onclick="closeButton()">&times;</button>
+                <h1>Instructions</h1>
+                <!-- first instruction, positioned on the left -->
+                <div class="leftSideInstruction">
+                    <!-- image to be replaced after game is done -->
+                    <img src="../images/left-right.png" class="instructionsImages">
+                    <br>
+                    <!-- spans on the explanation to highlight the keys -->
+                    <p>Use <span class="commands">ArrowLeft</span> or <span class="commands">ArrowRight</span> to move
+                        left or right.</p>
+                </div>
+                <!-- second instruction positioned in the center -->
+                <div class="centerSideInstruction">
+                    <!-- image to be replaced after game is done -->
+                    <img src="../images/jump.png" class="instructionsImages">
+                    <br>
+                    <!-- spans on the explanation to highlight the keys -->
+                    <p>Use <span class="commands">Space</span> to jump.</p>
+                </div>
+                <!-- third instruction positioned on the right -->
+                <div class="rightSideInstruction">
+                    <!-- image to be replaced after game is done -->
+                    <img src="../images/power.png" class="instructionsImages">
+                    <br>
+                    <!-- spans on the explanation to highlight the keys -->
+                    <p>Collect 3 Powers and press <span class="commands">ArrowUp</span> to perform a <span class="commands">Super
+                            Jump</span>.</p>
+                </div>
+            </div>
+        </div>
+    </h1>
+    <div class="registerBox">
+        <!-- the form for registration -->
+        <form>
+            <br><br><br>
+            <!-- fieldset to keep similar to the login page, to keep consistency -->
+            <!-- group the elements in the form -->
+            <fieldset class="loginRegisterField">
+                <!-- "SIGN UP" as a title for the fieldset -->
+                <legend>SIGN UP</legend>   
+                <div>
+                    <button type="button" class="registerRules" onclick="rulesButton()">Sign-up Rules!</button>
+                </div>
+                <div id="insideRules" class="insideRules">
+                    <!-- The content of the modal -->
+                    <div class="rulesContent">
+                        <button type="button" id="closeRulesModal" onclick="closeRulesButton()">&times;</button>
+                        <h1>Sign-up Rules!</h1>
+                        <br>
+                        <p>1. <span class="highlight">Username:</span> must be at least 3 characters long. Can contain
+                            only letters and numbers.</p>
+                        <br>
+                        <p>2. <span class="highlight">Password:</span> must be at least 6 characters long and contain at
+                            least a number, a symbol and a capital letter. Acceptable symbols: <span class="highlight">@$!%*?&</span>.
+                        </p>
+                    </div>
+                </div>
+                <!-- labels and inputs grouped in div for better styling -->
+                <div>
+                    <label for="uName">Username:</label>
+                    <input type="text" id="uName" name="uName"
+                        onclick="{document.getElementById('uName').style.backgroundColor = '#f1f1f1'}">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"
+                        onclick="{document.getElementById('email').style.backgroundColor = '#f1f1f1'}">
+                </div>
+                <div>
+                    <label for="birthday">Birthday:</label>
+                    <!-- set limitations on date selection -->
+                    <input type="date" id="birthday" name="birthday" value="2018-12-31" min="1940-01-01"
+                        max="2018-12-31">
+                </div>
+                <div>
+                    <label for="pass">Password:</label>
+                    <input type="password" id="pass" name="pass"
+                        onclick="{document.getElementById('pass').style.backgroundColor = '#f1f1f1'}">
+                </div>
+                <div>
+                    <label for="confirmPass">Confirm:</label>
+                    <input type="password" id="confirmPass" name="confirmPass"
+                        onclick="{document.getElementById('confirmPass').style.backgroundColor = '#f1f1f1'}">
+                </div>
+                <!-- paragraph element that displays message when login is successful or not -->
+                <p id="confirmation"></p>
+                <!-- button that processes the registration form, calling createAccount function -->
+                <input type="button" value="Register" onclick="createAccount()" class="registerButton">
+                <br><br>
+            </fieldset>
+        </form>
+    </div>
+    <script src="../javascript/script.js"></script>
+</body>
+
+</html>
